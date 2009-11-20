@@ -57,7 +57,7 @@ def system_types():
                 _property("description", "/type/text"),
                 _property("properties", "/type/property", unique=False),
                 _property("backreference", "/type/backreference", unique=False),
-                _property("kind", "/type/string", options=["primitive", "regular", "embeddable"]),
+                _property("kind", "/type/string", options=["primitive", "regular", "embeddable"], default="regular"),
             ]
         ),
         _type('/type/user', 'User', '',

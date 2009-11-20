@@ -4,7 +4,12 @@ $ kind = property.expected_type.kind
 
 $if kind == "primitive" or kind == "basic":
     $if property.get('options'):
-        $:Dropdown(property.name, property.options, value=thing.value).render()
+        $ v = thing.value
+        $if not v:
+            $ default = property.get('default', None)
+            if default:
+                $ v = default
+        $:Dropdown(property.name, property.options, value=v).render()
     $else:
         <input type="text" id="input_$property.name" name="$property.name" value="$thing.value"/>
 $elif kind == 'embeddable':
