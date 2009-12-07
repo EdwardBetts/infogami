@@ -161,7 +161,8 @@ def create_test_store():
             'name': 'kind',
             'expected_type': {'key': '/type/string'},
             'options': ['primitive', 'regular', 'embeddable'],
-            'unique': True
+            'unique': True,
+            'default': 'regular'
         }, {
             'name': 'properties',
             'expected_type': {'key': '/type/property'},
