@@ -169,7 +169,7 @@ def thingrepr(value, type=None):
         return ', '.join(thingrepr(t, type).strip() for t in value)
         
     from infogami.infobase import client        
-    if type is None and value is client.nothing:
+    if type is None and (value is client.nothing or value is None):
         return ""
     
     if isinstance(value, client.Thing):
